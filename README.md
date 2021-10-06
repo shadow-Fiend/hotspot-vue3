@@ -2,7 +2,7 @@
 
 A hot zone generation tool for VUE3 + TS projects
 
-![]()
+![](./src/assets/hotspot-vue3.png)
 
 ## 插件安装
 
@@ -22,7 +22,7 @@ npm install hotspot-vue3 --save
 import Hotspot from "hotspot-vue3";
 ```
 
-- 在你的业务代码中，按正常组建使用即可
+- 在你的业务代码中，按正常组件使用即可
 
 ```vue
 <template>
@@ -85,8 +85,7 @@ interface ZoneType {
   }
 })
 export default class App extends Vue {
-  image =
-    "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F13900508362%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635822019&t=4f038bbaa0fa1fff98d672ddada2d95c";
+  image = "./src/assets/big_fish.jpeg";
   zones = [] as ZoneType[];
   types = "move";
 
