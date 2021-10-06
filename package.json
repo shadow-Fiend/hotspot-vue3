@@ -1,0 +1,72 @@
+{
+  "name": "hotspot-vue3",
+  "version": "1.0.0",
+  "description": "A hot zone generation tool for VUE3 + TS projects",
+  "main": "dist/HotspotVue3.common.js",
+  "types": "dist/lib/main.d.ts",
+  "publisher": "547106430@qq.com",
+  "scripts": {
+    "build": "vue-cli-service build --target lib --name HotspotVue3 ./src/components/hotspot-vue3.vue",
+    "lint": "vue-cli-service lint",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadow-Fiend/hotspot-vue3.git"
+  },
+  "keywords": [
+    "vuejs",
+    "vue3",
+    "vue",
+    "ts",
+    "typeScript",
+    "hotspot",
+    "hot",
+    "zone"
+  ],
+  "author": "zhaoqian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shadow-Fiend/hotspot-vue3/issues"
+  },
+  "homepage": "https://github.com/shadow-Fiend/hotspot-vue3#readme",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0",
+    "vue-class-component": "^8.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^4.3.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
