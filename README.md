@@ -2,7 +2,7 @@
 
 A hot zone generation tool for VUE3 + TS projects
 
-![](./src/assets/hotspot-vue3.png)
+![image](https://github.com/shadow-Fiend/readme_image/blob/master/hotspot-vue3.png)
 
 ## 插件安装
 
@@ -85,7 +85,8 @@ interface ZoneType {
   }
 })
 export default class App extends Vue {
-  image = "./src/assets/big_fish.jpeg";
+  image =
+    "https://github.com/shadow-Fiend/readme_image/blob/master/big_fish.jpeg";
   zones = [] as ZoneType[];
   types = "move";
 
@@ -94,7 +95,7 @@ export default class App extends Vue {
     if (zon.topPer) {
       // 存在此参数,则通过拖动创建热区
       zone = zon;
-      zone.url = "https://github.com/ymtonny";
+      zone.url = "https://github.com/shadow-Fiend";
       this.types = "move"; // 存在max热区时，验证通过拖动或点击达到max
     } else {
       //通过按钮创建热区
@@ -103,7 +104,7 @@ export default class App extends Vue {
         leftPer: 0.2027,
         topPer: 0.2027,
         widthPer: 0.1027,
-        url: "https://github.com/ymtonny",
+        url: "https://github.com/shadow-Fiend",
         key: String(Math.random())
       } as ZoneType;
       this.types = "btn"; // 存在max热区时，验证通过拖动或点击达到max
