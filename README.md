@@ -1,10 +1,11 @@
 # hotspot-vue3 · [![npm](https://img.shields.io/badge/npm-v1.1.1-2081C1)](https://www.npmjs.com/package/hotspot-vue3) [![yarn](https://img.shields.io/badge/yarn-v1.1.1-F37E42)](https://yarnpkg.com/package/hotspot-vue3) [![github](https://img.shields.io/badge/GitHub-depositary-9A9A9A)](https://github.com/shadow-Fiend/hotspot-vue3) [![](https://img.shields.io/github/issues/shadow-Fiend/hotspot-vue3)](https://github.com/shadow-Fiend/hotspot-vue3/issues) [![](https://img.shields.io/github/forks/shadow-Fiend/hotspot-vue3)](https://github.com/shadow-Fiend/hotspot-vue3/network/members) [![](https://img.shields.io/github/stars/shadow-Fiend/hotspot-vue3)](https://github.com/shadow-Fiend/hotspot-vue3/stargazers)
 
-A hot zone generation tool for VUE3 + TS projects
+A hot zone generation tool for VUE3 + TS projects [中文文档](./README_ZH.md)
 
 ![image](https://github.com/shadow-Fiend/readme_image/blob/master/hotspot-vue3.png)
+![image](./src/assets/hotspot-vue3.png)
 
-## 插件安装
+## Plug-in installation
 
 ```bash
 yarn add hotspot-vue3
@@ -14,15 +15,15 @@ yarn add hotspot-vue3
 npm install hotspot-vue3 --save
 ```
 
-## 插件使用
+## The plug-in USES
 
-- 在业务组件文件中引入
+- Introduced in the business component file
 
 ```javascript
 import Hotspot from "hotspot-vue3";
 ```
 
-- 在你的业务代码中，按正常组件使用即可
+- In your business code, use it as a normal component
 
 ```vue
 <template>
@@ -50,7 +51,7 @@ import Hotspot from "hotspot-vue3";
       </template> -->
     </hotspot>
     <div class="hotapp__display">
-      <button type="primary" @click="handleAdd">添加热区</button>
+      <button type="primary" @click="handleAdd">Add hot spots</button>
       <input
         type="text"
         v-for="(zone, index) in zones"
@@ -93,12 +94,12 @@ export default class App extends Vue {
   handleAdd(zon: ZoneType) {
     let zone: ZoneType;
     if (zon.topPer) {
-      // 存在此参数,则通过拖动创建热区
+      // If this parameter exists, drag to create a hot zone
       zone = zon;
       zone.url = "https://github.com/shadow-Fiend";
-      this.types = "move"; // 存在max热区时，验证通过拖动或点击达到max
+      this.types = "move"; // When Max hot zones exist, verify by dragging or clicking to Max
     } else {
-      //通过按钮创建热区
+      // Create hot zones with buttons
       zone = {
         heightPer: 0.2027, //20.27%
         leftPer: 0.2027,
@@ -107,9 +108,9 @@ export default class App extends Vue {
         url: "https://github.com/shadow-Fiend",
         key: String(Math.random())
       } as ZoneType;
-      this.types = "btn"; // 存在max热区时，验证通过拖动或点击达到max
+      this.types = "btn"; // When Max hot zones exist, verify by dragging or clicking to Max
     }
-    this.zones.push(zone); // 热区数据
+    this.zones.push(zone); // Hotspot data
   }
 }
 </script>
@@ -139,58 +140,56 @@ export default class App extends Vue {
 </style>
 ```
 
-### 参数说明
+### Parameters that
 
-如示例代码所示，直接引入该组件，其他的功能全部通过属性来进行控制即可。
+As shown in the sample code, import this component directly, and control all other functions through properties.
 
-接下来就跟大家讲下每个属性的意义：
+Here's what each property means:
 
 #### Hotspot Attributes
 
-| 属性          | 描述                                         |  类型  |                      可接受的参数                      | 默认值 |
-| :------------ | :------------------------------------------- | :----: | :----------------------------------------------------: | :----: |
-| image         | 热区底图 url 地址                            | String |                                                        |        |
-| zonesInit     | 热区内容, 为数组形式                         | Array  | topPer、leftPer、widthPer、heightPer、url、active、key |        |
-| max           | 即当前热区最大显示数量，不设置则可以无限新增 | Number |                                                        |        |
-| types         | 新增热区的方式                               | String |   move: 通过鼠标拖动生成, btn 通过自定义按钮点击生成   |        |
-| switchOptions | 热区开关属性                                 | Object |   isShowSign、isShowDelete、isOverlap、isShowActive    |        |
-| styleOptions  | 热曲展示的一些色值属性                       | Object |    zoneBorderColor、zoneBgColor、zoneActiveBgColor     |        |
-| max           | 即当前热区最大显示数量，不设置则可以无限新增 | Number |                                                        |        |
-| max           | 即当前热区最大显示数量，不设置则可以无限新增 | Number |                                                        |        |
+| Attribute     | Description                                                                                                                     |  Type  |                               Accepted Values                                | Default |
+| :------------ | :------------------------------------------------------------------------------------------------------------------------------ | :----: | :--------------------------------------------------------------------------: | :-----: |
+| image         | Url address of heat base map                                                                                                    | String |                                                                              |         |
+| zonesInit     | Hot zone content, in array form                                                                                                 | Array  |            topPer、leftPer、widthPer、heightPer、url、active、key            |         |
+| max           | That is, the maximum number of displays in the current hot zone. If you do not set this parameter, it can be added indefinitely | Number |                                                                              |         |
+| types         | The way to add hot areas                                                                                                        | String | move: Generated by dragging the mouse, btn: Generated by custom button click |         |
+| switchOptions | Hot zone switch properties                                                                                                      | Object |              isShowSign、isShowDelete、isOverlap、isShowActive               |         |
+| styleOptions  | Hot zones display some color value properties                                                                                   | Object |               zoneBorderColor、zoneBgColor、zoneActiveBgColor                |         |
 
 #### ZonesInit Atributes
 
-| 属性      | 描述                                         |        类型         | 可接受的参数 |      默认值       |
-| :-------- | :------------------------------------------- | :-----------------: | :----------: | :---------------: |
-| topPer    | 距离顶部占整体区域百分比                     |       Number        |              |                   |
-| leftPer   | 距离左侧占整体区域百分比                     |       Number        |              |                   |
-| widthPer  | 热区宽度占整体区域百分比                     |       Number        |              |                   |
-| heightPer | 热区高度占整体区域百分比                     |       Number        |              |                   |
-| url       | 热区链接地址, 可以自己定义对象保存更多的参数 |    String / any     |              |                   |
-| active    | 热区激活状态                                 | Boolean / undefined |              | false / undefined |
-| key       | 热区 key, 用来做唯一标识                     |       String        |              |   Math.random()   |
+| Attribute | Description                                                                   |        Type         | Accepted Values |      Default      |
+| :-------- | :---------------------------------------------------------------------------- | :-----------------: | :-------------: | :---------------: |
+| topPer    | Distance from the top as a percentage of the total area                       |       Number        |                 |                   |
+| leftPer   | Distance to the left as a percentage of the total area                        |       Number        |                 |                   |
+| widthPer  | Percentage of hot zone width in total area                                    |       Number        |                 |                   |
+| heightPer | Percentage of hot zone height to total area                                   |       Number        |                 |                   |
+| url       | Hot area link address, you can define your own object to save more parameters |    String / any     |                 |                   |
+| active    | Hot zone activation state                                                     | Boolean / undefined |                 | false / undefined |
+| key       | Hot zone key, used for unique identification                                  |       String        |                 |   Math.random()   |
 
 #### SwitchOptions Atributes
 
-| 属性         | 描述                     |  类型   | 可接受的参数 | 默认值 |
-| :----------- | :----------------------- | :-----: | :----------: | :----: |
-| isShowSign   | 是否展示热区标识         | Boolean |              |  true  |
-| isShowDelete | 是否展示热区删除标识     | Boolean |              |  true  |
-| isOverlap    | 热区之间是否允许覆盖     | Boolean |              | false  |
-| isShowActive | 点击热区是否展示激活状态 | Boolean |              |  true  |
+| Attribute    | Description                                                 |  Type   | Accepted Values | Default |
+| :----------- | :---------------------------------------------------------- | :-----: | :-------------: | :-----: |
+| isShowSign   | Whether to display hot zone signs                           | Boolean |                 |  true   |
+| isShowDelete | Whether to display the hot zone deletion sign               | Boolean |                 |  true   |
+| isOverlap    | Whether coverage is allowed between hot zones               | Boolean |                 |  false  |
+| isShowActive | Click the hot zone to see if the active status is displayed | Boolean |                 |  true   |
 
 #### StyleOptions Atributes
 
-| 属性              | 描述                                                         |  类型  | 可接受的参数 |         默认值          |
-| :---------------- | :----------------------------------------------------------- | :----: | :----------: | :---------------------: |
-| zoneBorderColor   | 热区边框颜色                                                 | String |              |         #507bfb         |
-| zoneBgColor       | 热区背景颜色                                                 | String |              | rgba(80, 123, 251, 0.1) |
-| zoneActiveBgColor | 激活状态下热区背景颜色, 只有 isShowActive 属性为 true 时生效 | String |              | rgba(80, 123, 251, 0.4) |
+| Attribute         | Description                                                                                       |  Type  | Accepted Values |         Default         |
+| :---------------- | :------------------------------------------------------------------------------------------------ | :----: | :-------------: | :---------------------: |
+| zoneBorderColor   | Hot zone border color                                                                             | String |                 |         #507bfb         |
+| zoneBgColor       | Hot area background color                                                                         | String |                 | rgba(80, 123, 251, 0.1) |
+| zoneActiveBgColor | Hot zone background color in active state. This color takes effect only when isShowActive is true | String |                 | rgba(80, 123, 251, 0.4) |
 
-## 写在最后
+## Write in the last
 
-至此，插件的所有使用方法就介绍完了。
+At this point, all the ways to use the plug-in are covered.
 
-该插件仅支持 Vue3.x 的项目。。。
+This plugin only supports vue3.x projects...
 
-想进一步了解插件源码的请移步插件的 GitHub 仓库：[hotspot-vue3](https://github.com/shadow-Fiend/hotspot-vue3)
+For more information about the source of the plugin, please visit the GitHub plugin repository：[hotspot-vue3](https://github.com/shadow-Fiend/hotspot-vue3)
