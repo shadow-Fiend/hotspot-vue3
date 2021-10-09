@@ -2,7 +2,6 @@
 
 A hot zone generation tool for VUE3 + TS projects [中文文档](./README_ZH.md)
 
-![image](https://github.com/shadow-Fiend/readme_image/blob/master/hotspot-vue3.png)
 ![image](./src/assets/hotspot-vue3.png)
 
 ## Plug-in installation

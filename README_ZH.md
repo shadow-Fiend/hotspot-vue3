@@ -2,7 +2,6 @@
 
 VUE3 + TS 项目的热区生成工具 [english docs](./README.md)
 
-![image](https://github.com/shadow-Fiend/readme_image/blob/master/hotspot-vue3.png)
 ![image](./src/assets/hotspot-vue3.png)
 
 ## 插件安装
