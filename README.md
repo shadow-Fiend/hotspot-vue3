@@ -2,7 +2,7 @@
 
 A hot zone generation tool for VUE3 + TS projects [中文文档](./README_ZH.md)
 
-![image](./src/assets/hotspot-vue3.png)
+![image](./src/assets/hotspot-vue3.jpg)
 
 [Try out the demo!](https://shadow-fiend.github.io/hotspot-vue3/)
 
@@ -87,6 +87,7 @@ interface ZoneType {
   }
 })
 export default class App extends Vue {
+  // image url
   image =
     "https://github.com/shadow-Fiend/readme_image/blob/master/big_fish.jpeg";
   zones = [] as ZoneType[];

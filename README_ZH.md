@@ -2,7 +2,7 @@
 
 VUE3 + TS 项目的热区生成工具 [english docs](./README.md)
 
-![image](./src/assets/hotspot-vue3.png)
+![image](./src/assets/hotspot-vue3.jpg)
 
 [演示示例请点击 !](https://shadow-fiend.gitee.io/hotspot-vue3/)
 
@@ -87,6 +87,7 @@ interface ZoneType {
   }
 })
 export default class App extends Vue {
+  // image url
   image =
     "https://github.com/shadow-Fiend/readme_image/blob/master/big_fish.jpeg";
   zones = [] as ZoneType[];
