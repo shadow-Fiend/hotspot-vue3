@@ -4,6 +4,8 @@ A hot zone generation tool for VUE3 + TS projects [中文文档](./README_ZH.md)
 
 ![image](./src/assets/hotspot-vue3.png)
 
+[Try out the demo!](https://shadow-fiend.github.io/hotspot-vue3/)
+
 ## Plug-in installation
 
 ```bash
@@ -95,7 +97,7 @@ export default class App extends Vue {
     if (zon.topPer) {
       // If this parameter exists, drag to create a hot zone
       zone = zon;
-      zone.url = "https://github.com/shadow-Fiend";
+      zone.url = "https://github.com";
       this.types = "move"; // When Max hot zones exist, verify by dragging or clicking to Max
     } else {
       // Create hot zones with buttons
@@ -104,7 +106,7 @@ export default class App extends Vue {
         leftPer: 0.2027,
         topPer: 0.2027,
         widthPer: 0.1027,
-        url: "https://github.com/shadow-Fiend",
+        url: "https://github.com",
         key: String(Math.random())
       } as ZoneType;
       this.types = "btn"; // When Max hot zones exist, verify by dragging or clicking to Max
