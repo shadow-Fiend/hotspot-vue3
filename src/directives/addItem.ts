@@ -4,7 +4,6 @@ export default {
   beforeMount: function(el: any, binding: any) {
     const MIN_LIMIT = binding.instance.minSize || _.MIN_LIMIT;
     const isOverlap = binding.instance.switchOptions.isOverlap;
-    console.log("MIN_LIMIT: ", MIN_LIMIT);
     function handleMouseDown(e: any) {
       e && e.preventDefault();
       let overlap = false;

@@ -5101,7 +5101,6 @@ Zonevue_type_script_lang_ts.render = Zonevue_type_template_id_4a57de08_render
   beforeMount: function beforeMount(el, binding) {
     var MIN_LIMIT = binding.instance.minSize || utils.MIN_LIMIT;
     var isOverlap = binding.instance.switchOptions.isOverlap;
-    console.log("MIN_LIMIT: ", MIN_LIMIT);
 
     function handleMouseDown(e) {
       e && e.preventDefault();

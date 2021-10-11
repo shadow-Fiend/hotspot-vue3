@@ -1,6 +1,6 @@
 {
   "name": "hotspot-vue3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hot zone generation tool for VUE3 + TS projects",
   "main": "dist/HotspotVue3.common.js",
   "types": "dist/lib/main.d.ts",
